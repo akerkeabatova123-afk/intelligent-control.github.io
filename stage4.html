@@ -11,4 +11,4 @@ res = model(frame, conf=0.5)[0]            # порог уверенности
 for box in res.boxes:
     cls  = model.names[int(box.cls)]
     x, y, w, h = box.xywh[0].tolist()      # центр и размеры рамки (пиксели)
-    print(cls, float(box.conf), x, y)</pre><div class="nav"><a class="btn sec" href="stage3.html">← Этап 3</a><a class="btn" href="stage5.html">Этап 5 →</a></div><p class="note" style="margin-top:40px">Выполнил(а): ФИО студента, группа XX-XX</p></main><script src="app.js"></script></body></html>
+    print(cls, float(box.conf), x, y)</pre><div class="nav"><a class="btn sec" href="stage3.html">← Этап 3</a><a class="btn" href="stage5.html">Этап 5 →</a></div><p class="note" style="margin-top:40px">Выполнил(а): Абатова Акерке, Сулейменова Мадина, группа 25-19</p></main><script src="app.js"></script></body></html>
