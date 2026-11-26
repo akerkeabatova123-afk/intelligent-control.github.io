@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Этап 6 — Интеллектуальные системы управления</title><link rel="stylesheet" href="style.css"></head>
+<body data-page="s6"><header><b>Проектирование интеллектуальных систем управления</b><span>Технология программирования</span></header>
+<main><div class="stepper"><a href="index.html" title="Главная">⌂</a><a href="stage1.html" class="">1</a><a href="stage2.html" class="">2</a><a href="stage3.html" class="">3</a><a href="stage4.html" class="">4</a><a href="stage5.html" class="">5</a><a href="stage6.html" class="on">6</a><a href="stage7.html" class="">7</a><a href="result.html" title="Итоги">★</a></div><h1>Этап 6: Изменение координат</h1><p>Преобразование GPS-координат в локальную систему.</p>
+<div class="card"><b>Выполняемые задачи:</b><ul><li>Геодезические расчёты</li><li>Преобразование координат</li><li>Повышение точности</li></ul></div><p>GPS выдаёт широту и долготу в градусах, а дрону для управления нужны метры относительно точки старта. Для небольшого района используют локальную систему ENU (восток–север–вверх). Для высокой точности применяют библиотеку pyproj (UTM).</p>
+<h2>Демонстрация</h2><div class="card" id="demo"></div><h2>Код (Python)</h2><pre>import math
+R = 6378137.0                               # радиус Земли, м
+
+def gps_to_local(lat, lon, lat0, lon0):
+    x = R * math.radians(lon - lon0) * math.cos(math.radians(lat0))  # восток
+    y = R * math.radians(lat - lat0)                                 # север
+    return x, y
+
+print(gps_to_local(51.1712, 71.4530, 51.1694, 71.4491))</pre><div class="nav"><a class="btn sec" href="stage5.html">← Этап 5</a><a class="btn" href="stage7.html">Этап 7 →</a></div><p class="note" style="margin-top:40px">Выполнил(а): ФИО студента, группа XX-XX</p></main><script src="app.js"></script></body></html>
